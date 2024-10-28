@@ -1,50 +1,41 @@
-# React + TypeScript + Vite
+## Cloud Resume Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The purpose is to create a quick production web application integrating my current skills with Web Development with Microsoft Azure services to demonstrate my skill with both.
 
-Currently, two official plugins are available:
+https://cloudresumechallenge.dev/docs/the-challenge/azure/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Certifications
 
-## Expanding the ESLint configuration
+I currently possess the AZ-900 Cloud Practioner certification and am currently studying for the AZ-104 Cloud Associate. Not bad.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### HTML
 
-- Configure the top-level `parserOptions` property like this:
+The original challenge calls to use raw HTML to build the frontent; however I chose to use React.js as I am more prefer to work with it over the classic MVC structure. Since I am using the Vite toolchain to build the application, it should build into a static SPA so there should be no real functional differences between the two.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### CSS
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+For this project, I decided to use raw CSS and flexbox for styles. I normally use a CSS framework like Tailwind, but my CSS is rusty so I might as well get some practice in.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Since I work for Microsoft and I am getting MS certifications, I decided to go wtih a nice Microsoft Theme for this project. Thankfully the internet has a bunch of free resources to create a retro Windows theme.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Window 95 color palette
+https://colorswall.com/palette/264460
+
+Windows 95 font
+https://fontsarena.com/w95fa-by-alina-sava/
+
+### Static Website
+
+This application will be hosed online as an Azure Storage Static Website. Microsoft provides documentation about how to do this.
+
+https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-static-site-github-actions?tabs=userlevel
+https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website
+
+Set up github actions to build by vite application and push the finished build to Azure storage, where it will be hosted.
+
+
+
+
+
+
+

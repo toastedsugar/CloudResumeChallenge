@@ -1,0 +1,34 @@
+name: Deploy to S3
+on: 
+  push: 
+    branch: 
+     - main
+
+jobs: 
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+     - name: Checkout
+       uses: actions/checkout@v1
+
+     - name: NodeJS setup
+       uses: actions/setup-node@v1
+       with: 
+          node-version: 20.16.0
+
+     - name: Dependency Installation
+       run: npm install
+
+     - name: App build
+       run: npm run build
+
+     - name: Config AWS
+       uses: aws-actions/configure-aws-credentials@v1
+       with: 
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-access-key-secret: ${{ secrets.AWS_ACCESS_KEY_SECRET }}
+        aws-region: us-west-1
+
+     - name: Deploy to AWS S3
+       run: aws s3 sync build s3://cloud-resume-challenge-sugar --delete
