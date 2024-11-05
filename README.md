@@ -26,15 +26,33 @@ https://fontsarena.com/w95fa-by-alina-sava/
 
 ### Static Website
 
-This application will be hosed online as an Azure Storage Static Website. Microsoft provides documentation about how to do this.
+This application was intended to be hosted as an Azure Storage Static Website. Microsoft provides documentation about how to do this. 
 
-https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-static-site-github-actions?tabs=userlevel
-https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website
+However, I found that I was unable to access storage accounts, virtual machines, serverless functions and many  other services with my Azure subscription. Every time I try to access a service, I get redirected to a welcome screen. I could troubleshoot this, but switching over to AWS was far more convenient.
 
-Set up github actions to build by vite application and push the finished build to Azure storage, where it will be hosted.
+1. Created S3 bucket and configured it for public access and configured CORS for local development. Found a couple articles and youtube videos showing the granular bits that go into configuring S3 in this manner:
+
+https://aws.plainenglish.io/deploying-a-web-app-on-aws-s3-using-github-actions-d7031160acac
+https://www.alexhyett.com/github-actions-deploy-to-s3/
+https://www.youtube.com/watch?v=4zrupVYqQFs&ab_channel=WebDevCody
+
+2. The above resources also went into detail about how to create AWS IAM users that 
 
 
+I then set up github actions to build the vite application and push the finished build to Azure storage, where it will be hosted. This was a very involved and complicated process, but the following video was a great resource on learning why things are configured the way they are. 
 
+https://www.youtube.com/watch?v=tajK4ezyuNc&ab_channel=MohamadLawand
+
+### HTTPS
+
+Enabled HTTPS by using Amazon cloudfront as a CDN
+
+Pretty good resource to learn how to set up a cloudfront distribution and connect it to S3:
+https://www.youtube.com/watch?v=kbI7kRWAU-w&ab_channel=SamMeech-Ward
+
+### DNS
+
+Since I already had a spare domain with GoDaddy, I was tempted to just set up my cloudfront endpoint with with it. In the end however, I decided to transfer it over to Amazon Route53 since the point of this challenge is to use as many AWS services in one project as possible.
 
 
 

@@ -1,27 +1,89 @@
-
-
 @font-face {
-    font-family: 'W95';
-    src: url(./assets/W95FA/W95FA.otf) format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-size: normal;
+  font-family: "W95";
+  src: url(./assets/W95FA/W95FA.otf) format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-size: normal;
 }
-
-
 
 /* Defining global variables */
 :root {
-    --bg-color: #008080;
-    --header: #0827f5;
-    --menu-primary: #c3c3c3;
-    --menu-lighter: #fdffff;
-    --menu-darker: #818181;
-    --error: #ff0081;
-  }
+  --bg-color: #008080;
+  --header: #0827f5;
+  --menu-primary: #c3c3c3;
+  --menu-lighter: #fdffff;
+  --menu-darker: #818181;
+  --error: #ff0081;
+}
 
-  body {
-    background-color: var(--bg-color);
-    font-family: W95;
-    font-size: 1.25rem;
-  }
+body {
+  background-color: var(--bg-color);
+  font-family: W95;
+  font-size: 1.25rem;
+}
+
+/* Navbar styles */
+
+.nav-navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-top: solid 3px var(--menu-lighter);
+  background-color: var(--menu-primary);
+  z-index: 1;
+}
+
+.nav-start-button {
+  border-width: 3px;
+  background-color: var(--menu-primary);
+  border-top-color: var(--menu-lighter);
+  border-left-color: var(--menu-lighter);
+  border-bottom-color: var(--menu-darker);
+  border-right-color: var(--menu-darker);
+  padding: 4px 6px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.nav-start-button-pressed {
+  background-color: var(--menu-primary);
+  border-top-color: var(--menu-darker);
+  border-left-color: var(--menu-darker);
+  border-bottom-color: var(--menu-lighter);
+  border-right-color: var(--menu-lighter);
+  padding: 4px 6px;
+  cursor: pointer;
+}
+
+.nav-menu-container {
+  position: absolute;
+  bottom: 37px; /* Places the menu above the navbar */
+  left: 0; /* Aligns the menu with the left edge of the screen */
+  background-color: var(--menu-primary);
+  border-top: solid 3px var(--menu-lighter);
+  border-left: solid 3px var(--menu-lighter);
+  border-bottom: solid 3px black;
+  border-right: solid 3px black;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-menu-item {
+  display: block;
+  text-decoration: none;
+  padding: 8px 0;
+  color: black;
+}
+
+.nav-menu-side-header {
+  color: white;
+  background-color: var(--menu-darker);
+  writing-mode: vertical-lr;
+  transform: rotateZ(180deg);
+
+  padding-bottom: .5em;
+}
