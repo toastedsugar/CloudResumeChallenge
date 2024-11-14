@@ -54,6 +54,10 @@ https://www.youtube.com/watch?v=kbI7kRWAU-w&ab_channel=SamMeech-Ward
 
 Since I already had a spare domain with GoDaddy, I was tempted to just set up my cloudfront endpoint with with it. In the end however, I decided to transfer it over to Amazon Route53 since the point of this challenge is to use as many AWS services in one project as possible.
 
+Amazon provides resources to get started
+https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started-cloudfront-overview.html#getting-started-cloudfront-request-certificate
+
+In order to get Cloudfront to hook up with my domain, I also needed to create a certificate. For a while I was unable to figure out how it worked until I realized that Cloudfront requires it's certificate to be located in the Northern Virginia region, wheras I was working mostly in Northern California.
 
 
 

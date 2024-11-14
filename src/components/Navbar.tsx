@@ -10,7 +10,7 @@ export default function Navbar() {
   const NavbarMenu = () => (
     <div className="nav-menu-container">
       <div className="nav-menu-side-header">Cloud Resume Challenge</div>
-      <div>
+      <div className="nav-menu-item-container">
         <a href="#Resume" className="nav-menu-item">
           Home
         </a>
@@ -26,7 +26,7 @@ export default function Navbar() {
 
   return (
     <nav className="nav-navbar">
-      <button className="nav-start-button" onClick={toggleMenu}>
+      <button className="button" onClick={toggleMenu}>
         S T A R T
       </button>
       {isMenuOpen && NavbarMenu()}

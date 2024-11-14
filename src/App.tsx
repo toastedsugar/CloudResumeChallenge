@@ -4,10 +4,17 @@ import Navbar from "./components/Navbar";
 
 export default function App() {
   return (
-    <body>
-      <Resume />
-      <VisitorCounter />
+    <div>
+      <div className="page-wrapper">
+        <div className="page-container">
+          <div>Header</div>
+          <div className="page-content">
+            <Resume />
+            <VisitorCounter />
+          </div>
+        </div>
+      </div>
       <Navbar />
-    </body>
+    </div>
   );
 }
