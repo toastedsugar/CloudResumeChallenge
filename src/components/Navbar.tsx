@@ -1,13 +1,31 @@
 import { useState } from "react";
 
-export default function Navbar() {
+interface NavbarProps {
+  isStartButtonClicked: boolean;
+  setIsStartButtonClicked: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+
+
+
+const Navbar: React.FC<NavbarProps> = ({isStartButtonClicked, setIsStartButtonClicked}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
+    setIsStartButtonClicked(!isStartButtonClicked)
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const clearMenu = () => {
+    setIsStartButtonClicked(false)
+    setIsMenuOpen(false)
+  }
+
   const NavbarMenu = () => (
+    <>
+    <div className="nav-menu-underlay" onClick={clearMenu}>
+    </div>
+
     <div className="nav-menu-container">
       <div className="nav-menu-side-header">Cloud Resume Challenge</div>
       <div className="nav-menu-item-container">
@@ -22,14 +40,17 @@ export default function Navbar() {
         </a>
       </div>
     </div>
+    </>
   );
 
   return (
     <nav className="nav-navbar">
-      <button className="button" onClick={toggleMenu}>
+      <button className={isStartButtonClicked ? "button-pressed": "button"} onClick={toggleMenu}>
         S T A R T
       </button>
       {isMenuOpen && NavbarMenu()}
     </nav>
   );
 }
+
+export default Navbar

@@ -1,7 +1,50 @@
+import { experience } from "../assets/experience.js";
+import { education } from "../assets/education.js";
+
+interface ResumeItem {
+  title: string;
+  organization: string;
+  location: string;
+  startDate: string;
+  endDate: string;
+  description: string[];
+}
+
+const ResumeItem: React.FC<ResumeItem> = ({
+  title,
+  organization,
+  location,
+  startDate,
+  endDate,
+  description,
+}) => {
+  return (
+    <section>
+      <p>{title}</p>
+      <ul>
+        <li>
+          <div>{organization}</div>
+          <div>{location}</div>
+        </li>
+        <li>
+          {startDate} - {endDate}
+        </li>
+        <li>
+          <ul>
+            {description.map((desc: string) => (
+              <li>{desc}</li>
+            ))}
+          </ul>
+        </li>
+      </ul>
+    </section>
+  );
+};
+
 export default function Resume() {
   return (
     <div>
-    {/** Title */}
+      {/** Title */}
       <section>
         <p>Resume</p>
       </section>
@@ -9,29 +52,32 @@ export default function Resume() {
       {/** Education */}
       <section>
         <p>Education</p>
-        <ul>
-          <li>Systems Programming</li>
-          <li>
-            <div>De Anza college</div>
-            <div>Cupertino, California</div>
-          </li>
-          <li>August 2023</li>
-          <li>Description</li>
-        </ul>
+        {education.map((data) => (
+          <ResumeItem
+            title={data.title}
+            organization={data.organization}
+            location={data.location}
+            startDate={data.startDate}
+            endDate={data.endDate}
+            description={data.description}
+          />
+        ))}
       </section>
 
-{/** Experience */}
-<section>
-    <p>Datacenter Technician</p>
-    <ul>
-        <li>
-            <div>Microsoft</div>
-            <div>Santa Clara, California</div>
-        </li>
-        <li>March 2024 - CURRENT</li>
-        <li>Description</li>
-    </ul>
-</section>
+      {/** Experience */}
+      <section>
+        <p>Experience</p>
+        {experience.map((data) => (
+          <ResumeItem
+            title={data.title}
+            organization={data.organization}
+            location={data.location}
+            startDate={data.startDate}
+            endDate={data.endDate}
+            description={data.description}
+          />
+        ))}
+      </section>
     </div>
   );
 }

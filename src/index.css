@@ -37,11 +37,10 @@ body {
 
 .button-pressed {
   background-color: var(--menu-primary);
-  border-top-color: var(--menu-darker);
-  border-left-color: var(--menu-darker);
-  border-bottom-color: var(--menu-lighter);
-  border-right-color: var(--menu-lighter);
-  padding: 4px 6px;
+  border-top: solid 3px black;
+  border-left: solid 3px black;
+  border-bottom: solid 3px white;
+  border-right: solid 3px white;  padding: 4px 6px;
   cursor: pointer;
 }
 
@@ -60,7 +59,18 @@ body {
   z-index: 1;
 }
 
+.nav-menu-underlay {
+background-color: pink;
+opacity: 0;
+width: 100vh;
+height:100vh;
+position: fixed;
+top: 0;
+left: 0;
+}
+
 .nav-menu-container {
+  z-index: 3;
   width: 260px;
   height: 380px;
   position: absolute;

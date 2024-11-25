@@ -1,8 +1,11 @@
 import Resume from "./components/Resume";
 import VisitorCounter from "./components/VisitorCounter";
 import Navbar from "./components/Navbar";
+import { useState } from "react";
 
 export default function App() {
+  const [isStartButtonClicked, setIsStartButtonClicked] = useState<boolean>(false)
+
   return (
     <div>
       <div className="page-wrapper">
@@ -14,7 +17,7 @@ export default function App() {
           </div>
         </div>
       </div>
-      <Navbar />
+      <Navbar isStartButtonClicked={isStartButtonClicked} setIsStartButtonClicked={setIsStartButtonClicked}/>
     </div>
   );
 }
