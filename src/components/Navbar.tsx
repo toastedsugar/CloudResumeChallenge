@@ -1,12 +1,10 @@
 import { useState } from "react";
+import WindowsLogo from "../assets/Win95-icons/Windows/Windows logo (without text).ico"
 
 interface NavbarProps {
   isStartButtonClicked: boolean;
   setIsStartButtonClicked: React.Dispatch<React.SetStateAction<boolean>>;
 }
-
-
-
 
 const Navbar: React.FC<NavbarProps> = ({isStartButtonClicked, setIsStartButtonClicked}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,7 +44,11 @@ const Navbar: React.FC<NavbarProps> = ({isStartButtonClicked, setIsStartButtonCl
   return (
     <nav className="nav-navbar">
       <button className={isStartButtonClicked ? "button-pressed": "button"} onClick={toggleMenu}>
+      <img src={WindowsLogo} style={{height: '1.7em'}} alt="Windows" />
+      <p style={{fontSize: '1rem'}}>
+
         S T A R T
+      </p>
       </button>
       {isMenuOpen && NavbarMenu()}
     </nav>
