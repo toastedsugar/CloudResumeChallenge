@@ -5,7 +5,7 @@ export const education = [
       location: "Cupertino, CA",
       startDate: "01/2019",
       endDate: "08/2023",
-      description: ["C++", "Object oriented programming"],
+      description: [],
     },
     {
         title: "Molecular Biology",
@@ -13,6 +13,6 @@ export const education = [
         location: "Arcata, CA",
         startDate: "01/2019",
         endDate: "08/2023",
-        description: ["Research"],
+        description: [],
       },
   ];

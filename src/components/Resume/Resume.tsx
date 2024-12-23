@@ -1,5 +1,6 @@
-import { experience } from "../assets/experience.js";
-import { education } from "../assets/education.js";
+import { experience } from "../../assets/experience.js";
+import { education } from "../../assets/education.js";
+import Skills from "./Skills.tsx";
 
 interface ResumeItem {
   title: string;
@@ -21,12 +22,15 @@ const ResumeItem: React.FC<ResumeItem> = ({
   return (
     <section className="resume-item">
       <p className="resume-item-title">{title}</p>
-      <div className="resume-item-info" >
-        <div className="resume-item-org">{organization}</div>, {'U+0009'}
-        <div className="resume-item-location">{location}</div>
+      <div className="resume-item-info">
+        <div className="resume-item-org">{organization}</div>.
+        <div className="resume-item-location">{location}</div>.
+        <div className="resume-item-date">
+
         {startDate} - {endDate}
-      </div> 
-      {description.map((desc: string) => (
+        </div>
+      </div>
+      {description?.map((desc: string) => (
         <li className="resume-item-description">{desc}</li>
       ))}
     </section>
@@ -43,21 +47,9 @@ const Resume = () => {
       </div>
       <div className="resume-content">
         <div>
-          {/** Education */}
+          {/** Skills */}
           <section>
-            <p className="resume-item-header">Education</p>
-            {education.map((data) => (
-              <ResumeItem
-                title={data.title}
-                organization={data.organization}
-                location={data.location}
-                startDate={data.startDate}
-                endDate={data.endDate}
-                description={data.description}
-              />
-            ))}
           </section>
-
           {/** Experience */}
           <section>
             <p className="resume-item-header">Experience</p>
@@ -69,6 +61,20 @@ const Resume = () => {
                 startDate={data.startDate}
                 endDate={data.endDate}
                 description={data.description}
+              />
+            ))}
+          </section>
+          {/** Education */}
+          <section>
+            <p className="resume-item-header">Education</p>
+            {education.map((data) => (
+              <ResumeItem
+                title={data.title}
+                organization={data.organization}
+                location={data.location}
+                startDate={data.startDate}
+                endDate={data.endDate}
+                description={data?.description}
               />
             ))}
           </section>

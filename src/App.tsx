@@ -1,4 +1,4 @@
-import Resume from "./components/Resume";
+import Resume from "./components/Resume/Resume";
 import Navbar from "./components/Navbar";
 import { useState } from "react";
 import ComputerImage from "../src/assets/Win95-icons/Computers/Computer with programs.ico";
@@ -28,33 +28,3 @@ export default function App() {
     </div>
   );
 }
-
-/**
-
-<div>
-      <div className="page-wrapper">
-        <div className="page-container">
-          <div className="page-header">
-            
-            <img className="page-header-icon" src={ComputerImage} alt="" />
-            {selectedPage}</div>
-          <div className="page-menu">
-            <p className="page-menu-item">File</p>
-            <p className="page-menu-item">Edit</p>
-            <p className="page-menu-item">View</p>
-            <p className="page-menu-item">Help</p>
-          </div>
-          <div className="page-content">
-            <Resume  />
-            <VisitorCounter />
-          </div>
-        </div>
-      </div>
-      <Navbar
-        isStartButtonClicked={isStartButtonClicked}
-        setIsStartButtonClicked={setIsStartButtonClicked}
-      />
-    </div>
-
-
- */

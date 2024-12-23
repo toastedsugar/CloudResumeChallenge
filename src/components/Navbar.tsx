@@ -45,9 +45,9 @@ const Navbar: React.FC<NavbarProps> = ({isStartButtonClicked, setIsStartButtonCl
     <nav className="nav-navbar">
       <button className={isStartButtonClicked ? "button-pressed": "button"} onClick={toggleMenu}>
       <img src={WindowsLogo} style={{height: '1.7em'}} alt="Windows" />
-      <p style={{fontSize: '1rem'}}>
+      <p style={{fontSize: '1rem', fontWeight: '900'}}>
 
-        S T A R T
+        START
       </p>
       </button>
       {isMenuOpen && NavbarMenu()}

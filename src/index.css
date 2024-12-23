@@ -198,26 +198,39 @@ body {
 }
 
 .resume-item {
+  margin-bottom: 1rem;
 }
 
 .resume-item-info {
   display: flex;
   flex-direction: row;
   font-size: 1.1rem;
-  margin: 0.4rem;
 }
 
 .resume-item-header {
   font-size: 1.7rem;
-  font-weight: 200;
-  margin-bottom: 0.5rem;
-  margin-left: 0.3rem;
+  font-weight: lighter;
+  margin-bottom: 1rem;
 }
 .resume-item-title {
 font-size: 1.5rem;
 font-weight: bold;
+margin-bottom: 0.2rem;
 }
 .resume-item-org {
+margin-right: 1rem;
 }
 .resume-item-location {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
+.resume-item-date{
+  margin-left: 1rem;
+}
+
+.resume-item-description {  
+  padding: 0.4rem;  
+  margin-top: 0.4rem;
+  margin-left: 1.5rem;
+}
+
