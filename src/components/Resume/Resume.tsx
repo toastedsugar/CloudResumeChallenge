@@ -1,6 +1,6 @@
 import { experience } from "../../assets/experience.js";
 import { education } from "../../assets/education.js";
-import Skills from "./Skills.tsx";
+//import Skills from "./Skills.tsx";
 
 interface ResumeItem {
   title: string;
