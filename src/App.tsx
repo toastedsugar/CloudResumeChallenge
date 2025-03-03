@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div className="app-wrapper">
       <div className="page-wrapper">
-        <div className="page-container">
+        <div className="page-container"> 
           <div className="page-header">
             <img className="page-header-icon" src={ComputerImage} alt="" />
             {selectedPage}
